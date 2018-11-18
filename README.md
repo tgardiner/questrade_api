@@ -20,7 +20,7 @@ Python3 Questrade API Wrapper
    * If the token is valid future initiations will not require a refresh token
 
    ```
-   from questrade import Questrade
+   from questrade_api import Questrade
    q = Questrade()
    ```
 
