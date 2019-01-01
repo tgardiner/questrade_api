@@ -13,7 +13,7 @@ Python3 Questrade API Wrapper
 
    ```
    from questrade_api import Questrade
-   q = Questrade('XYz1dBlop33lLLuys4Bd')
+   q = Questrade(refresh_token='XYz1dBlop33lLLuys4Bd')
    ```
    **Important:**
    A token will be created at `~/.questrade.json` and used for future API calls

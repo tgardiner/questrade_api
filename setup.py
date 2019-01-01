@@ -5,8 +5,8 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='questrade-api',
-    version='1.0.1',
-    description='Questrade API Wrapper',
+    version='1.0.2',
+    description='Python3 Questrade API Wrapper',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url='https://github.com/tgardiner/questrade_api',
@@ -17,9 +17,10 @@ setuptools.setup(
     package_data={
         'questrade_api': ['questrade.cfg'],
     },
+    python_requires='>=3',
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-    ],
+    ]
 )
