@@ -1,6 +1,6 @@
 import os
 import json
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 import configparser
 import urllib
 from questrade_api.auth import Auth
@@ -17,7 +17,7 @@ class Questrade:
             self.config = self.__read_config(CONFIG_PATH)
         if 'refresh_token' in kwargs:
             self.auth = Auth(
-                refresh_token=kwargs['refresh_token'], config=self.config)
+                refresh_token=kwargs['refresh_token'], token_path=kwargs['token_path'], config=self.config)
         elif 'token_path' in kwargs:
             self.auth = Auth(
                 token_path=kwargs['token_path'], config=self.config)

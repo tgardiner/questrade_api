@@ -21,14 +21,14 @@ class Auth:
 
     def __read_token(self):
         try:
-            with open(os.path.expanduser(self.token_path)) as f:
+            with open(self.token_path) as f:
                 str = f.read()
                 return json.loads(str)
         except IOError:
             raise('No token provided and none found at {}'.format(TOKEN_PATH))
 
     def __write_token(self, token):
-        with open(os.path.expanduser(self.token_path), 'w') as f:
+        with open(self.token_path, 'w') as f:
             json.dump(token, f)
 
     def __refresh_token(self, token):
