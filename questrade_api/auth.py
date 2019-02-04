@@ -30,6 +30,7 @@ class Auth:
     def __write_token(self, token):
         with open(self.token_path, 'w') as f:
             json.dump(token, f)
+        os.chmod(self.token_path, 0o600)
 
     def __refresh_token(self, token):
         req_time = int(time.time())
