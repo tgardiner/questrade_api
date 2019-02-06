@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='questrade-api',
-    version='1.0.2',
+    version='1.0.3',
     description='Python3 Questrade API Wrapper',
     long_description=long_description,
     long_description_content_type="text/markdown",
