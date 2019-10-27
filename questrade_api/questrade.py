@@ -4,6 +4,8 @@ from datetime import datetime, timedelta
 import configparser
 import urllib
 from questrade_api.auth import Auth
+import pytz
+from tzlocal import get_localzone
 
 CONFIG_PATH = os.path.join(os.path.abspath(
     os.path.dirname(__file__)), 'questrade.cfg')
@@ -70,10 +72,12 @@ class Questrade:
 
     @property
     def __now(self):
-        return datetime.now().astimezone().isoformat('T')
+        tz = get_localzone()
+        return tz.localize(datetime.now()).isoformat('T')
 
     def __days_ago(self, d):
-        now = datetime.now().astimezone()
+        tz = get_localzone()
+        now = tz.localize(datetime.now())
         return (now - timedelta(days=d)).isoformat('T')
 
     @property
